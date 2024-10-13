@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Nunito;
+  src: url("../fonts/Nunito/static/Nunito-Light.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url("../fonts/Nunito/static/Nunito-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url("../fonts/Nunito/static/Nunito-Medium.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url("../fonts/Nunito/static/Nunito-Bold.ttf");
+  font-weight: 700;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Nunito, sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  overflow: hidden;
+}
