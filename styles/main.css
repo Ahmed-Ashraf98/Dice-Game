@@ -1,3 +1,4 @@
+/* ======================= Fonts Settings ===================== */
 @font-face {
   font-family: Nunito;
   src: url("../fonts/Nunito/static/Nunito-Light.ttf");
@@ -22,60 +23,10 @@
   font-weight: 700;
 }
 
-:root {
-  --main-font-fm: Nunito;
-}
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--main-font-fm), sans-serif;
-}
-
-body {
-  min-height: 100vh;
-  background-image: linear-gradient(
-    to left top,
-    #081b39,
-    #123053,
-    #1c486d,
-    #246088,
-    #3482ac
-  );
-}
-
-main {
-  min-height: 100vh;
-  overflow: hidden;
-}
+/* ======================= Utilities ============================== */
 
 .hidden {
   display: none;
-}
-
-.player {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #81c2ff;
-  text-align: center;
-  min-width: 400px;
-  min-height: 700px;
-  padding: 30px 70px;
-  opacity: 0.4;
-  border-radius: 12px;
-}
-
-.player-1 {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.player-2 {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .mb-20 {
@@ -94,16 +45,74 @@ main {
   margin-top: 50px;
 }
 
+.btn {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: unset;
+  font-weight: 700;
+  font-size: 15px;
+  border-style: unset;
+  border-color: unset;
+  background-color: rgba(255, 255, 255, 0.93);
+  border-radius: 12px;
+  padding: 5px 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+/* ====================== Main Conf =============================== */
+
+:root {
+  --main-font-fm: Nunito;
+  --header-fs: 50px;
+  --main-vh: 100vh;
+  --active-op: 0.7;
+  --non-active-op: 0.4;
+  --dots-margin: 5px;
+}
+
+/* =================== Global Settings ============================ */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--main-font-fm), sans-serif;
+}
+
+body {
+  min-height: var(--main-vh);
+  background-image: linear-gradient(
+    to left top,
+    #081b39,
+    #123053,
+    #1c486d,
+    #246088,
+    #3482ac
+  );
+}
+
+main {
+  min-height: var(--main-vh);
+  overflow: hidden;
+}
+
 h2,
 h3 {
-  font-size: 50px;
+  font-size: var(--header-fs);
 }
+
+/* =========================== Main Layout ================================ */
 
 .main-layout {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* =============================== All Columns ================================ */
 
 .cols-wrapper {
   position: relative;
@@ -112,8 +121,32 @@ h3 {
   align-items: center;
 }
 
-.active {
-  opacity: 0.7;
+/* =============================== Players Style =============================== */
+
+.player.active {
+  opacity: var(--active-op);
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #81c2ff;
+  text-align: center;
+  min-width: 400px;
+  min-height: 700px;
+  padding: 30px 70px;
+  opacity: var(--non-active-op);
+  border-radius: 12px;
+}
+
+.player-1 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.player-2 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .score-box {
@@ -127,6 +160,7 @@ h3 {
   }
 }
 
+/* ============================== Dice Column ======================================= */
 .dice-col {
   position: absolute;
   top: 50%;
@@ -143,20 +177,6 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-
-.btn {
-  cursor: pointer;
-  opacity: 0.8;
-  outline: unset;
-  font-weight: 600;
-  border-style: unset;
-  border-color: unset;
-  background-color: rgba(255, 255, 255, 0.93);
-  border-radius: 12px;
-  padding: 5px 10px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
 
 .dice-bottom-sec {
@@ -204,12 +224,12 @@ h3 {
   }
 
   & .ds-1 {
-    margin: 5px;
+    margin: var(--dots-margin);
     right: 0;
   }
 
   & .ds-2 {
-    margin: 5px;
+    margin: var(--dots-margin);
     left: 0;
     bottom: 0;
   }
@@ -222,12 +242,12 @@ h3 {
   }
 
   & .ds-1 {
-    margin: 5px;
+    margin: var(--dots-margin);
     right: 0;
   }
 
   & .ds-2 {
-    margin: 5px;
+    margin: var(--dots-margin);
     left: 0;
     bottom: 0;
   }
@@ -246,23 +266,23 @@ h3 {
   }
 
   & .ds-1 {
-    margin: 5px;
+    margin: var(--dots-margin);
     left: 0;
   }
 
   & .ds-2 {
-    margin: 5px;
+    margin: var(--dots-margin);
     right: 0;
   }
 
   & .ds-3 {
-    margin: 5px;
+    margin: var(--dots-margin);
     left: 0;
     bottom: 0;
   }
 
   & .ds-4 {
-    margin: 5px;
+    margin: var(--dots-margin);
     right: 0;
     bottom: 0;
   }
@@ -275,23 +295,23 @@ h3 {
   }
 
   & .ds-1 {
-    margin: 5px;
+    margin: var(--dots-margin);
     left: 0;
   }
 
   & .ds-2 {
-    margin: 5px;
+    margin: var(--dots-margin);
     right: 0;
   }
 
   & .ds-3 {
-    margin: 5px;
+    margin: var(--dots-margin);
     left: 0;
     bottom: 0;
   }
 
   & .ds-4 {
-    margin: 5px;
+    margin: var(--dots-margin);
     right: 0;
     bottom: 0;
   }
@@ -310,23 +330,23 @@ h3 {
   }
 
   & .ds-1 {
-    margin: 5px;
+    margin: var(--dots-margin);
     left: 0;
   }
 
   & .ds-2 {
-    margin: 5px;
+    margin: var(--dots-margin);
     right: 0;
   }
 
   & .ds-3 {
-    margin: 5px;
+    margin: var(--dots-margin);
     left: 0;
     bottom: 0;
   }
 
   & .ds-4 {
-    margin: 5px;
+    margin: var(--dots-margin);
     right: 0;
     bottom: 0;
   }

@@ -12,30 +12,30 @@
         <section class="player player-1 active">
           <div class="top-sec">
             <h2 class="mb-20">Player 1</h2>
-            <h3 class="mt-50">0</h3>
+            <h3 class="mt-50 total-score">0</h3>
           </div>
           <div class="bottom-sec">
             <div class="score-box">
               <p>Current Score</p>
-              <p class="mt-20">0</p>
+              <p class="mt-20 current-score">0</p>
             </div>
           </div>
         </section>
         <section class="player player-2">
           <div class="top-sec">
             <h2 class="mb-20">Player 2</h2>
-            <h3 class="mt-50">0</h3>
+            <h3 class="mt-50 total-score">0</h3>
           </div>
           <div class="bottom-sec">
             <div class="score-box">
               <p>Current Score</p>
-              <p class="mt-20">0</p>
+              <p class="mt-20 current-score">0</p>
             </div>
           </div>
         </section>
         <section class="dice-col">
           <div class="dice-col-wrapper">
-            <button class="btn">🔁 New Game</button>
+            <button id="newGameBtn" class="btn">🔁 New Game</button>
             <div class="dice-shapes">
               <div class="dice dice-1 hidden">
                 <div class="dot-symbol"></div>
@@ -77,8 +77,8 @@
               </div>
             </div>
             <div class="dice-bottom-sec">
-              <button class="btn">🎲 Roll Dice</button>
-              <button class="btn">📥 Hold</button>
+              <button id="rollBtn" class="btn">🎲 Roll Dice</button>
+              <button id="holdBtn" class="btn">📥 Hold</button>
             </div>
           </div>
         </section>
