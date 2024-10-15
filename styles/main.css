@@ -45,6 +45,10 @@
   margin-top: 50px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .btn {
   cursor: pointer;
   opacity: 0.8;
@@ -97,6 +101,7 @@ body {
 main {
   min-height: var(--main-vh);
   overflow: hidden;
+  margin: 50px 0;
 }
 
 h2,
@@ -364,4 +369,54 @@ h3 {
     right: 0;
     transform: translateY(-50%);
   }
+}
+
+/*? ========================= Custom Modal ============================= */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.modal-wrapper {
+  border-radius: 12px;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 30px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.modal-header {
+  text-align: end;
+}
+
+.modal-body {
+  margin: 10px;
+
+  text-align: center;
+
+  & p {
+    margin: 10px;
+    font-size: 25px;
+  }
+
+  & button {
+    margin-top: 10px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.205);
+  backdrop-filter: blur(3px);
 }

@@ -1,6 +1,6 @@
 "use strict";
 
-//? ============================================== Set Global Vars ====================================
+//? ============================ Set Global Vars ==========================
 const hiddenClassName = "hidden";
 const eventName = "click";
 const player1Num = 1;
@@ -10,7 +10,8 @@ let p1_currentScore = 0;
 let p2_currentScore = 0;
 let p1_totalScore = 0;
 let p2_totalScore = 0;
-//? =============================================== Select Elements ======================================
+
+//? ============================ Select Elements ===========================
 
 // Select Players Data
 const player_1 = document.querySelector(`.player-${player1Num}`);
@@ -33,13 +34,30 @@ const player_2_CurrentScoreEle = document.querySelector(
 const btn_NewGame = document.querySelector("#newGameBtn");
 const btn_RollDice = document.querySelector("#rollBtn");
 const btn_Hold = document.querySelector("#holdBtn");
+const btn_closeModal = document.querySelector("#closeBtn");
+const btn_doneBtn = document.querySelector("#doneBtn");
 
 // Select Dices
 const allDices = document.querySelectorAll(".dice");
 
 // Select Modal
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
 
-//? ========================================= Add Events to Buttons =======================================
+//? ============================= Add Events to Buttons =====================
+
+const closeModalOptionsEvent = () => {
+  btn_closeModal.addEventListener(eventName, () => {
+    resetGame();
+    hideModal();
+  });
+
+  btn_doneBtn.addEventListener(eventName, () => {
+    resetGame();
+    hideModal();
+  });
+};
+
 const addNewGameEvent = () => {
   btn_NewGame.addEventListener(eventName, function () {
     resetGame();
@@ -86,19 +104,20 @@ const addHoldEvent = () => {
   });
 };
 
-//? ======================================= Assign Events To Buttons ======================================
+//? ================= Assign Events To Buttons ==========================
 const assignEventsToBtns = function () {
   addNewGameEvent();
   addHoldEvent();
   addRollDiceEvent();
+  closeModalOptionsEvent();
 };
 
-//? ===================================== Run start function ==============================================
+//? ================== Run start function ================================
 (function () {
   assignEventsToBtns();
 })();
 
-//? ======================================= Utilities ===============================================
+//? ======================= Utilities ======================================
 
 function getRandomDiceNumber() {
   return Math.trunc(Math.random() * 6) + 1;
@@ -130,11 +149,20 @@ function switchToPlayerNum(playerNum) {
   }
 }
 
+function showModal() {
+  modal.classList.remove(hiddenClassName);
+  overlay.classList.remove(hiddenClassName);
+}
+
+function hideModal() {
+  modal.classList.add(hiddenClassName);
+  overlay.classList.add(hiddenClassName);
+}
+
 function displayWinner(playerNum) {
   //1- Display Winner Message
-
-  //2- Reset Game
-  resetGame();
+  document.querySelector(".win-player").textContent = `Player ${playerNum}`;
+  showModal();
 }
 
 function getActivePlayer() {
