@@ -7,6 +7,84 @@
     <title>Dice Game</title>
   </head>
   <body>
+    <main class="main-layout">
+      <div class="cols-wrapper">
+        <section class="player player-1 active">
+          <div class="top-sec">
+            <h2 class="mb-20">Player 1</h2>
+            <h3 class="mt-50">0</h3>
+          </div>
+          <div class="bottom-sec">
+            <div class="score-box">
+              <p>Current Score</p>
+              <p class="mt-20">0</p>
+            </div>
+          </div>
+        </section>
+        <section class="player player-2">
+          <div class="top-sec">
+            <h2 class="mb-20">Player 2</h2>
+            <h3 class="mt-50">0</h3>
+          </div>
+          <div class="bottom-sec">
+            <div class="score-box">
+              <p>Current Score</p>
+              <p class="mt-20">0</p>
+            </div>
+          </div>
+        </section>
+        <section class="dice-col">
+          <div class="dice-col-wrapper">
+            <button class="btn">🔁 New Game</button>
+            <div class="dice-shapes">
+              <div class="dice dice-1 hidden">
+                <div class="dot-symbol"></div>
+              </div>
+
+              <div class="dice dice-2 hidden">
+                <div class="dot-symbol ds-1"></div>
+                <div class="dot-symbol ds-2"></div>
+              </div>
+
+              <div class="dice dice-3 hidden">
+                <div class="dot-symbol ds-1"></div>
+                <div class="dot-symbol ds-2"></div>
+                <div class="dot-symbol ds-3"></div>
+              </div>
+
+              <div class="dice dice-4 hidden">
+                <div class="dot-symbol ds-1"></div>
+                <div class="dot-symbol ds-2"></div>
+                <div class="dot-symbol ds-3"></div>
+                <div class="dot-symbol ds-4"></div>
+              </div>
+
+              <div class="dice dice-5 hidden">
+                <div class="dot-symbol ds-1"></div>
+                <div class="dot-symbol ds-2"></div>
+                <div class="dot-symbol ds-3"></div>
+                <div class="dot-symbol ds-4"></div>
+                <div class="dot-symbol ds-5"></div>
+              </div>
+
+              <div class="dice dice-6 hidden">
+                <div class="dot-symbol ds-1"></div>
+                <div class="dot-symbol ds-2"></div>
+                <div class="dot-symbol ds-3"></div>
+                <div class="dot-symbol ds-4"></div>
+                <div class="dot-symbol ds-5"></div>
+                <div class="dot-symbol ds-6"></div>
+              </div>
+            </div>
+            <div class="dice-bottom-sec">
+              <button class="btn">🎲 Roll Dice</button>
+              <button class="btn">📥 Hold</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
     <script src="./scripts/app.js"></script>
   </body>
 </html>

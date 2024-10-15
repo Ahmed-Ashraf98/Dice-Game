@@ -22,20 +22,326 @@
   font-weight: 700;
 }
 
+:root {
+  --main-font-fm: Nunito;
+}
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--main-font-fm), sans-serif;
 }
 
 body {
   min-height: 100vh;
-  font-family: Nunito, sans-serif;
+  background-image: linear-gradient(
+    to left top,
+    #081b39,
+    #123053,
+    #1c486d,
+    #246088,
+    #3482ac
+  );
 }
 
 main {
   min-height: 100vh;
   overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #81c2ff;
+  text-align: center;
+  min-width: 400px;
+  min-height: 700px;
+  padding: 30px 70px;
+  opacity: 0.4;
+  border-radius: 12px;
+}
+
+.player-1 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.player-2 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+h2,
+h3 {
+  font-size: 50px;
+}
+
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cols-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  opacity: 0.7;
+}
+
+.score-box {
+  color: #fff;
+  background-color: #3482ac;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 19px;
+  & :last-child {
+    font-size: 25px;
+  }
+}
+
+.dice-col {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dice-col-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.btn {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: unset;
+  font-weight: 600;
+  border-style: unset;
+  border-color: unset;
+  background-color: rgba(255, 255, 255, 0.93);
+  border-radius: 12px;
+  padding: 5px 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.dice-bottom-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  & * {
+    margin-bottom: 12px;
+  }
+}
+
+/* ================== Draw Dice ============================ */
+
+.dice {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.dot-symbol {
+  width: 12px;
+  height: 12px;
+  background-color: #3482ac;
+  border-radius: 50%;
+}
+
+.dice-1 {
+  position: relative;
+  & .dot-symbol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dice-2 {
+  position: relative;
+  & .dot-symbol {
+    position: absolute;
+  }
+
+  & .ds-1 {
+    margin: 5px;
+    right: 0;
+  }
+
+  & .ds-2 {
+    margin: 5px;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.dice-3 {
+  position: relative;
+  & .dot-symbol {
+    position: absolute;
+  }
+
+  & .ds-1 {
+    margin: 5px;
+    right: 0;
+  }
+
+  & .ds-2 {
+    margin: 5px;
+    left: 0;
+    bottom: 0;
+  }
+
+  & .ds-3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dice-4 {
+  position: relative;
+  & .dot-symbol {
+    position: absolute;
+  }
+
+  & .ds-1 {
+    margin: 5px;
+    left: 0;
+  }
+
+  & .ds-2 {
+    margin: 5px;
+    right: 0;
+  }
+
+  & .ds-3 {
+    margin: 5px;
+    left: 0;
+    bottom: 0;
+  }
+
+  & .ds-4 {
+    margin: 5px;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.dice-5 {
+  position: relative;
+  & .dot-symbol {
+    position: absolute;
+  }
+
+  & .ds-1 {
+    margin: 5px;
+    left: 0;
+  }
+
+  & .ds-2 {
+    margin: 5px;
+    right: 0;
+  }
+
+  & .ds-3 {
+    margin: 5px;
+    left: 0;
+    bottom: 0;
+  }
+
+  & .ds-4 {
+    margin: 5px;
+    right: 0;
+    bottom: 0;
+  }
+
+  & .ds-5 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dice-6 {
+  position: relative;
+  & .dot-symbol {
+    position: absolute;
+  }
+
+  & .ds-1 {
+    margin: 5px;
+    left: 0;
+  }
+
+  & .ds-2 {
+    margin: 5px;
+    right: 0;
+  }
+
+  & .ds-3 {
+    margin: 5px;
+    left: 0;
+    bottom: 0;
+  }
+
+  & .ds-4 {
+    margin: 5px;
+    right: 0;
+    bottom: 0;
+  }
+
+  & .ds-5 {
+    margin-left: 5px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  & .ds-6 {
+    margin-right: 5px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
 }
